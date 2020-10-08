@@ -36,7 +36,7 @@ private:
 	ADXL345::RANGE range;
 	ADXL345::RESOLUTION resolution;
 	short accelerationX, accelerationY, accelerationZ; // raw 2's complement values
-	float pitch, roll;                                 // in degrees
+	float pitch, roll, yaw;                                 // in degrees
 	short combineRegisters(unsigned char msb, unsigned char lsb);
 	void calculatePitchAndRoll();
 	virtual int updateRegisters();
@@ -55,6 +55,7 @@ public:
 	virtual short getAccelerationZ() { return accelerationZ; }
 	virtual float getPitch() { return pitch; }
 	virtual float getRoll() { return roll; }
+	virtual float getYaw() { return yaw; }
 
 	// Debugging method to display and update the pitch/roll on the one line
 	virtual void displayPitchAndRoll(int iterations = 600);

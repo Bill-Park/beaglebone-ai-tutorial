@@ -68,8 +68,9 @@ void ADXL345::calculatePitchAndRoll(){
 	float accXSquared = accXg * accXg ;
 	float accYSquared = accYg * accYg ;
 	float accZSquared = accZg * accZg ;
-	this->pitch = 180 * atan(accXg/sqrt(accYSquared + accZSquared))/M_PI;
-	this->roll = 180 * atan(accYg/sqrt(accXSquared + accZSquared))/M_PI;
+	this->pitch = 180 * atan(accXg / sqrt(accYSquared + accZSquared)) / M_PI ;
+	this->roll = 180 * atan(accYg / sqrt(accXSquared + accZSquared)) / M_PI ;
+	this->yaw = 180 * atan(sqrt(accXSquared + accYSquared) / accZg) / M_PI ;
 }
 
 /**
