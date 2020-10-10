@@ -156,8 +156,8 @@ void ADXL345::setResolution(ADXL345::RESOLUTION resolution) {
 void ADXL345::displayPitchAndRoll(int iterations){
 	int count = 0;
 	while(count < iterations){
-	      cout << "Pitch:"<< this->getPitch() << " Roll:" << this->getRoll() << "     \r"<<flush;
-	      usleep(100000);
+	      cout << "Pitch:"<< this->getPitch() << " Roll:" << this->getRoll() << " Yaw:" << this->getYaw()<< "     \r"<<flush ;
+	      usleep(100 * 1000);
 	      this->readSensorState();
 	      count++;
 	}
